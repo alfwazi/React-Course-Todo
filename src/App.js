@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import logo from "./logo.svg";
+import TodoContainer from "./components/TodoContanier";
+import About from "./components/about";
+import Nav from "./components/Nav";
+class App extends Component {
+  state = {
+    page: "todoApp",
+  };
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  changePage = (pageName) => {
+    this.setState({ page: pageName });
+  };
+
+  render() {
+    const displayedPage =
+      this.state.page === "todoApp" ? (
+        <TodoContainer logo={logo}/>
+      ) : (
+        <About name="Tuwaiq Course" />
+      );
+    return (
+      <div className="App">
+        <Nav changePage={this.changePage} />
+        {displayedPage}
+      </div>
+    );
+  }
 }
 
 export default App;

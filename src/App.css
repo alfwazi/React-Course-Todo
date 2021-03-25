@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+body {
+  background: linear-gradient(-45deg, #3124e9, #4a25a1, #2469e9);
+  background-size: 400vh 400vw;
+  animation: gradient 15s ease infinite;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
+  margin:18px auto;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.done {
+  text-decoration: line-through;
+}
+.title {
+  font-size: 60px;
+  text-align: center;
+  color: white;
+  border: 1px solid #391d80;
+  border-radius: 41px;
+  padding: 43px;
+}
+
+.form {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+.item-input {
+  margin: 0px 25px;
+  text-align: center;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  width: 91%;
+}
+
+input:focus {
+  outline: none;
+}
+.item-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  color: #ffffff;
+  padding: 4px 10px;
+  margin: 10px 0px;
+  background: #342367;
+  cursor: pointer;
+
+}
+ul {
+  margin: 0;
+  padding: 0px;
+}
+.logo{
+  float: right;
+  padding-top: 22px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: #0756a0;
+  width: 35px;
+  height: 15px;
+  box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.88);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  box-shadow: 0px 1px 20px -2px rgba(162, 195, 255, 0.88);
+  background-color:#4725ab;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn__add {
+  padding: 15px 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn__add::before {
+  content: "+";
+}
+
+.btn__delete {
+  padding: 10px 0px;
+  width: 20px;
+}
+
+.btn__delete::before {
+  content: "x";
+  
+}
+
+.nav-btn {
+  width: 60px;
+  height: 30px;
+  margin-right:8px
+}
+
+.nav {
+  border-bottom: 1px solid #1e0c49;
+  padding-bottom: 11px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.about {
+  margin: 30px;
+  font-size: 40px;
+  color: white;
+}
+.hr{
+  border-color: #5f41bb;
+    margin-top: 15px;
+}
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }

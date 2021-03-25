@@ -18,7 +18,7 @@ class App extends Component {
       this.state.page === "todoApp" ? (
         <TodoContainer logo={logo}/>
       ) : (
-        <About name="Tuwaiq Course" />
+        <About name="Tuwaiq React Title" />
       );
     return (
       <div className="App">
